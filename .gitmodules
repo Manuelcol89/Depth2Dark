@@ -4,3 +4,6 @@
 [submodule "Assets/SD2.1-base-ZeroSNR"]
 	path = Assets/SD2.1-base-ZeroSNR
 	url = https://huggingface.co/ByteDance/sd2.1-base-zsnr-laionaes6
+[submodule "Assets/Diffusers"]
+	path = Assets/Diffusers
+	url = https://github.com/huggingface/diffusers.git
