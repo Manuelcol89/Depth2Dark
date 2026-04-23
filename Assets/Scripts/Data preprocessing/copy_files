@@ -1,0 +1,20 @@
+import argparse
+import os
+import shutil
+
+from glob import glob
+
+args = argparse.ArgumentParser()
+args.add_argument('--input', type=str, default=r'D:\Users\manue\AppData\Local\SICE\Bright')
+args.add_argument('--check', type=str, default=r'D:\Users\manue\AppData\Local\SICE\Dark_cleaned')
+args.add_argument('--output', type=str, default=r'D:\Users\manue\AppData\Local\SICE\Bright_cleaned')
+args = args.parse_args()
+
+paths = glob(os.path.join(args.input, '*.*'))
+check_paths = glob(os.path.join(args.check, '*.*'))
+for p in paths:
+    filename1 = os.path.basename(p)
+    for q in check_paths:
+        filename2 = os.path.basename(q)
+        if filename1 == filename2:
+            shutil.copy(p, os.path.join(args.output, filename1))
